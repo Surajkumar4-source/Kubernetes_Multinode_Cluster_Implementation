@@ -1,0 +1,41 @@
+
+
+----------------------Instructions for Master Node Script------------------
+
+1. Save the script as install_master_node.sh on the master node.
+2. Replace <master_node_IP> with the actual IP address of your master node in the kubeadm init command.
+3. Run the script:
+
+sudo bash install_master_node.sh
+
+Copy the join command displayed at the end. You'll need this to connect the worker nodes.
+
+
+
+
+
+--------------------Instructions for Worker Node Script------------------------
+
+
+1. Save the script as install_worker_node.sh on each worker node.
+2. Run the script:
+
+sudo bash install_worker_node.sh
+
+3. When prompted, enter the join command obtained from the master node setup.
+
+
+
+
+
+-------------Summary of Steps-------------
+On the Master Node:
+
+Run install_master_node.sh.
+Copy the join command.
+On Each Worker Node:
+
+Run install_worker_node.sh.
+Enter the join command when prompted.
+With these scripts, you’ll have a Kubernetes cluster configured with a master node and multiple worker nodes!
+
