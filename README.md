@@ -294,4 +294,52 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 <br>
 <br>
 
+
+
+
+*After setting up the Kubernetes cluster on Rocky Linux, use the following commands on the master and worker nodes to verify the installation and ensure that the nodes are successfully connected to the cluster.*
+
+### Verification Commands
+*On the Master Node*
+1.  Check Node Status: Ensure that both master and worker nodes are in a "Ready" state.
+
+```yml
+kubectl get nodes
+
+Expected Output: The master node and worker node(s) should be listed with the status "Ready."
+
+```
+
+2. Check Pod Status in All Namespaces: Ensure that essential pods (like kube-dns and network plugin pods) are running.
+
+```yml
+
+kubectl get pods --all-namespaces
+
+Expected Output: All system pods should show the status "Running."
+```
+
+3. Verify Cluster Information: This provides an overview of the cluster, including the server and client versions.
+
+```yml
+kubectl cluster-info
+
+Expected Output: Information about the Kubernetes API server and other components, indicating successful cluster setup.
+```
+
+### On the Worker Node
+1. Check kubelet Status: Ensure the kubelet service is active and running on the worker node.
+
+```yml
+sudo systemctl status kubelet
+
+Expected Output: The kubelet service should display "active (running)."
+```
+
+2. Confirm Node Connection to the Cluster:
+
+- * This step is primarily checked from the master node, as the master confirms that the worker nodes have successfully joined.*
+  
+- *If you encounter any issues, ensure that the join token command was executed correctly on the worker node.*
+
 ##### Upon completing these steps, you will have a fully functional Kubernetes cluster on Rocky Linux, with a master node managing the worker nodes. This setup provides a strong foundation for exploring container orchestration, scaling applications, and managing workloads effectively.
