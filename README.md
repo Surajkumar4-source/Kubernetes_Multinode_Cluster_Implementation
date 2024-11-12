@@ -338,7 +338,7 @@ Expected Output: The kubelet service should display "active (running)."
 
 2. Confirm Node Connection to the Cluster:
 
-- * This step is primarily checked from the master node, as the master confirms that the worker nodes have successfully joined.*
+- *This step is primarily checked from the master node, as the master confirms that the worker nodes have successfully joined.*
   
 - *If you encounter any issues, ensure that the join token command was executed correctly on the worker node.*
 
