@@ -29,11 +29,13 @@ sudo bash install_worker_node.sh
 
 
 -------------Summary of Steps-------------
-On the Master Node:
+
+## On the Master Node:
 
 Run install_master_node.sh.
 Copy the join command.
-On Each Worker Node:
+
+## On Each Worker Node:
 
 Run install_worker_node.sh.
 Enter the join command when prompted.
